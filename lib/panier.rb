@@ -13,7 +13,7 @@ class Panier
       "Apple" => 0,
       "Mele" => 0,
       "Banane" => 0,
-      "Cerise" => 0
+      "Cerise" => 0,
     }
     @cart = []
   end
@@ -36,15 +36,11 @@ class Panier
 
   def total_price(argument)
     item_fruit = Object.const_get(argument)
-    p "Vous avez ajouté : #{item_fruit} à votre panier !"
-    # reduction du fruit
     reduc = item_fruit.instance_variable_get(:@reduc)
-    # somme de tout les fruits
     total = @cart.flatten.map(&:price).sum
-    p total -= reduc if @fruit_dico["Banane"] > 1
-    p total -= reduc if @fruit_dico["Cerise"] > 1
-    p total -= reduc if @fruit_dico["Mele"] > 1
-    p total -= reduc if @fruit_dico["Apple"] > 2
+    total -= reduc if @fruit_dico["Banane"] > 1 || @fruit_dico["Cerise"] > 1 || @fruit_dico["Mele"] > 1
+    total -= reduc if @fruit_dico["Apple"] > 2
+    p "Vous avez ajouté : #{item_fruit} à votre panier !"
     p "Votre panier est de : #{total}"
   end
 end
