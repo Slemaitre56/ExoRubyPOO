@@ -6,7 +6,7 @@ require "./lib/cerise"
 require "./lib/banane"
 
 class Panier
-  def initialize(fruit_dico)
+  def initialize
     @sum = 0
     @fruit_dico = {
       "Pomme" => 0,

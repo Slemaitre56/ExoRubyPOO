@@ -27,6 +27,7 @@ PLATFORMS
 DEPENDENCIES
   pry
   rspec
+  rubocop
 
 BUNDLED WITH
    2.2.15
