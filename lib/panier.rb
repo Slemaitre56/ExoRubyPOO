@@ -15,26 +15,33 @@ class Panier
       "Banane" => 0,
       "Cerise" => 0
     }
+    @cart =[]
   end
 
   def fruit_basket(argument)
-    cart =
+    total_cart(argument)
+    total_price(argument) 
+    total = @cart.flatten.map(&:price).sum
+    reduc = @cart.flatten.map(&:reduc)
+    @fruit_dico["Cerise"] < 1 ? total - reduc : total
+
+    p "Votre panier est de : #{total}"
+  end
+
+  def total_cart(argument)
+    @cart <<
       argument.split(",").map do |item|
         item.strip!
         fruit = Object.const_get(item).new
         @fruit_dico[item] += 1
-        fruit
-      end
-    total_price(argument)
-    p @sum
+        fruit  
+      end   
   end
 
   def total_price(argument)
     item_fruit = Object.const_get(argument)
     prix = item_fruit.instance_variable_get(:@price)
-    # p item_fruit.instance_method(:reduce_price)
     p "Vous avez ajouté : #{item_fruit} à votre panier !"
     p "Son prix est de : #{prix} centimes"
-    p @sum += prix
   end
 end

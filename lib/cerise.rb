@@ -1,9 +1,9 @@
 class Cerise < Fruits
-  @price = 75
-  @reduc = 20
+  attr_reader :price, :reduc
 
   def initialize
-    @price = price
+    @price = 75
+    @reduc = 20
   end
 
   def reduce_price
