@@ -1,12 +1,8 @@
-require "pry"
-
 class Pomme < Fruits
+  @price = 100
+  @REDUC = 0
 
-    @price = 100
-    @REDUC = 0 
-
-    def initialize
-        @price = price
-    end
-
+  def initialize
+    @price = price
+  end
 end
