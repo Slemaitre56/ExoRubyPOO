@@ -1,12 +1,11 @@
 class Banane < Fruits
-  attr_reader :price, :reduc
+  @reduc = 150
+
+  attr_reader :price
 
   def initialize
     @price = 150
-    @reduc = 150
+    
   end
 
-  def reduce_price
-    fruit_dico["Banane"] < 1 ? @price - @reduc : @price
-  end
 end

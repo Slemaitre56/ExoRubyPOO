@@ -1,8 +1,7 @@
 class Fruits
-  attr_accessor :name, :price
+  attr_accessor :price
 
-  def initialize(name)
-    @name = name
+  def initialize
     @price = price
   end
 end
