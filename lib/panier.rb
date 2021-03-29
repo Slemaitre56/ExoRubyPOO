@@ -33,7 +33,8 @@ class Panier
     item_fruit = Object.const_get(argument)
     prix = item_fruit.instance_variable_get(:@price)
     #p item_fruit.instance_method(:reduce_price)
-    p "Vous avez ajouté : #{item_fruit} à votre panier ! Son prix est de : #{prix} centimes"
+    p "Vous avez ajouté : #{item_fruit} à votre panier !"
+    p "Son prix est de : #{prix} centimes"
     p @sum += prix
   end
 end

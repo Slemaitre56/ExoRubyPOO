@@ -1,4 +1,3 @@
-require "pry"
 require "./lib/panier"
 
 ARGF.each do |argument|

@@ -7,7 +7,6 @@ class Cerise < Fruits
   end
 
   def reduce_price
-    #definir count
     if fruit_dico["Cerise"] < 1 ? @price - @REDUC : 0; end
   end
 end
