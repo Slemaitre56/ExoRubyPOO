@@ -13,14 +13,14 @@ class Panier
       "Apple" => 0,
       "Mele" => 0,
       "Banane" => 0,
-      "Cerise" => 0
+      "Cerise" => 0,
     }
-    @cart =[]
+    @cart = []
   end
 
   def fruit_basket(argument)
     total_cart(argument)
-    total_price(argument) 
+    total_price(argument)
     total = @cart.flatten.map(&:price).sum
     reduc = @cart.flatten.map(&:reduc)
     @fruit_dico["Cerise"] < 1 ? total - reduc : total
@@ -34,8 +34,8 @@ class Panier
         item.strip!
         fruit = Object.const_get(item).new
         @fruit_dico[item] += 1
-        fruit  
-      end   
+        fruit
+      end
   end
 
   def total_price(argument)

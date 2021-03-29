@@ -11,5 +11,5 @@ gem "rubocop"
 gem 'tilt'
 gem 'erb'
 gem "rack"
-gem 'thin', '~> 1.8'
+gem "thin", "~> 1.8"
 
