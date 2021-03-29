@@ -1,25 +1,25 @@
-require './lib/fruits'
-require './lib/pomme'
-require './lib/apple'
-require './lib/mele'
-require './lib/cerise'
-require './lib/banane'
+require "./lib/fruits"
+require "./lib/pomme"
+require "./lib/apple"
+require "./lib/mele"
+require "./lib/cerise"
+require "./lib/banane"
 
 class Panier
   def initialize(fruit_dico)
     @sum = 0
     @fruit_dico = {
-      'Pomme' => 0,
-      'Apple' => 0,
-      'Mele' => 0,
-      'Banane' => 0,
-      'Cerise' => 0,
+      "Pomme" => 0,
+      "Apple" => 0,
+      "Mele" => 0,
+      "Banane" => 0,
+      "Cerise" => 0,
     }
   end
 
   def fruit_basket(argument)
     cart =
-      argument.split(',').map do |item|
+      argument.split(",").map do |item|
         item.strip!
         fruit = Object.const_get(item).new
         @fruit_dico[item] += 1
@@ -33,8 +33,8 @@ class Panier
     item_fruit = Object.const_get(argument)
     prix = item_fruit.instance_variable_get(:@price)
     # p item_fruit.instance_method(:reduce_price)
-    p 'Vous avez ajouté : #{item_fruit} à votre panier !'
-    p 'Son prix est de : #{prix} centimes'
+    p "Vous avez ajouté : #{item_fruit} à votre panier !"
+    p "Son prix est de : #{prix} centimes"
     p @sum += prix
   end
 end

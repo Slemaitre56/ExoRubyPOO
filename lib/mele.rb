@@ -7,6 +7,6 @@ class Mele < fruits
   end
 
   def reduce_price
-    if fruit_dico['Mele'] < 1 ? @price - @REDUC : 0; end
+    if fruit_dico["Mele"] < 1 ? @price - @REDUC : 0; end
   end
 end
