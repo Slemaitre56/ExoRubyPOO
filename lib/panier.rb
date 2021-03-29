@@ -21,7 +21,6 @@ class Panier
   def fruit_basket(argument)
     total_cart(argument)
     total_price(argument)
-    #p "Votre panier est de : #{total}"
   end
 
   def total_cart(argument)
@@ -45,5 +44,4 @@ class Panier
     p "Vous avez ajouté : #{item_fruit} à votre panier !"
     p "Votre panier est de : #{total}"
   end
-
 end
