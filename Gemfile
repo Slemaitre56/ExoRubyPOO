@@ -5,11 +5,11 @@ source "https://rubygems.org"
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
 # gem "rails"
+gem "erb"
 gem "pry"
-gem "rspec"
-gem "rubocop"
-gem 'tilt'
-gem 'erb'
 gem "rack"
+gem "rubocop"
+gem "rspec"
+gem 'tilt'
 gem "thin", "~> 1.8"
 

@@ -8,11 +8,10 @@ class Router
     case path
     when "/"
       template = Tilt.new("index.html.erd")
-      [200, { "Content-type" => "text/html"}, template.render]
+      [200, { "Content-type" => "text/html" }, template.render]
     else
       template = Tilt.new("no_found.html.erd")
-      [404, { "Content-type" => "text/html"}, template.render]
+      [404, { "Content-type" => "text/html" }, template.render]
     end
   end
-end  
-
+end
