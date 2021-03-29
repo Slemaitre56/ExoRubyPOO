@@ -5,5 +5,4 @@ class Banane < Fruits
   def initialize
     @price = 150
   end
-
 end
