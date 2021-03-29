@@ -13,7 +13,7 @@ class Panier
       "Apple" => 0,
       "Mele" => 0,
       "Banane" => 0,
-      "Cerise" => 0,
+      "Cerise" => 0
     }
   end
 
@@ -25,6 +25,7 @@ class Panier
         @fruit_dico[item] += 1
         fruit
       end
+    cart
     total_price(argument)
     p @sum
   end

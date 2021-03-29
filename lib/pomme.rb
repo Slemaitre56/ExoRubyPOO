@@ -1,6 +1,6 @@
 class Pomme < Fruits
   @price = 100
-  @REDUC_FRUIT = 0
+  @reduc = 0
 
   def initialize
     @price = price
