@@ -25,7 +25,6 @@ class Panier
         @fruit_dico[item] += 1
         fruit
       end
-    cart
     total_price(argument)
     p @sum
   end

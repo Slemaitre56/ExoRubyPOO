@@ -2,3 +2,5 @@ Style/StringLiterals:
   EnforcedStyle: double_quotes
 Documentation:
   Enabled: false
+TrailingBlankLines:
+  Enabled: false
