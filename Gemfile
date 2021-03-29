@@ -8,8 +8,10 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 gem "erb"
 gem "pry"
 gem "rack"
-gem "rubocop"
 gem "rspec"
-gem 'tilt'
+gem "rubocop"
 gem "thin", "~> 1.8"
+gem "tilt"
+
+
 
