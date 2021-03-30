@@ -6,6 +6,7 @@ require "./lib/cerise"
 require "./lib/banane"
 
 class Panier
+  attr_accessor :fruit_dico, :total
   def initialize
     @sum = 0
     @fruit_dico = {
@@ -16,6 +17,7 @@ class Panier
       "Cerise" => 0
     }
     @cart = []
+    @total = 0
   end
 
   def fruit_basket(argument)
@@ -36,12 +38,10 @@ class Panier
   def total_price(argument)
     item_fruit = Object.const_get(argument)
     reduc = item_fruit.instance_variable_get(:@reduc)
-    total = @cart.flatten.map(&:price).sum
-    total -= reduc if @fruit_dico["Banane"] > 1
-    total -= reduc if @fruit_dico["Cerise"] > 1
-    total -= reduc if @fruit_dico["Mele"] > 1
-    total -= reduc if @fruit_dico["Apple"] > 2
-    p "Vous avez ajouté : #{item_fruit} à votre panier !"
-    p "Votre panier est de : #{total}"
+    @total = @cart.flatten.map(&:price).sum
+    @total -= reduc if @fruit_dico["Banane"] > 1
+    @total -= reduc if @fruit_dico["Cerise"] > 1
+    @total -= reduc if @fruit_dico["Mele"] > 1
+    @total -= reduc if @fruit_dico["Apple"] > 2
   end
 end
