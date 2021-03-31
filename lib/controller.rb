@@ -3,17 +3,30 @@ require "tilt"
 require "erb"
 require "./lib/panier"
 require "./lib/shop"
+require "pry"
 
 class Controller
  attr_accessor :params
+ # def dbb
+   # dbb =SQLite3::Database.new("./myshopDB.db")
+    #items = dbb.execute("SELECT name, price FROM products")
+   # item ={}
+    #items.each { |i| item.store(i[0],i[1])} 
+    #binding.pry
+  #end  
 
   def index
-    render({fruit: @fruit, total: panier.total, paniers: panier.fruit_dico})
+    
+    @total = panier.total
+    @panier_dico = panier.fruit_dico
+
+    render({fruit: @fruit, total: @total, panier_dico: @panier_dico})
   end
 
   def basket
-    p @fruit = params.values[0]
-    p panier.fruit_basket(@fruit)
+    
+    @fruit = params.values[0]
+    panier.fruit_basket(@fruit)
     redirect("/")
   end
 
@@ -29,7 +42,7 @@ class Controller
   private
 
   def panier
-    @panier = Panier.new
+    @panier ||= Panier.new
   end
 
   def render(params, code=200)

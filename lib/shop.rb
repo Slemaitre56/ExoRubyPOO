@@ -1,6 +1,6 @@
 require "sqlite3"
 
-class Product
+class Shop
   def self.dbCnx
     @dbCnx ||= SQLite3::Database.new("./myshopDB.db")
     @dbCnx.results_as_hash = true
@@ -14,7 +14,7 @@ class Product
   end
 
   def self.find_by_name(name)
-    product = dbCnx.execute("SELECT name, price FROM products WHERE name='#{name}' LIMIT 1")
+    product = dbCnx.execute("SELECT name, price FROM products WHERE name='#{name}' LIMIT 1").first
 
     self.new(name: product["name"], price: product["price"])
   end

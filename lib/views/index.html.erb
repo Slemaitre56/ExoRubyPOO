@@ -19,7 +19,7 @@
       <input type="reset" value="Vider le panier">
     </form>
 
-    <% paniers.each do |key, value| %>
+    <% panier_dico.each do |key, value| %>
       <% if value != 0 %>
         <p><%= "Vous avez #{value} #{key}(s) "%> </p>
       <% end %>
