@@ -1,12 +1,12 @@
 require "./lib/fruits"
-require "./lib/pomme"
-require "./lib/apple"
-require "./lib/mele"
-require "./lib/cerise"
-require "./lib/banane"
-require "./lib/poire"
+require "./lib/pommes"
+require "./lib/apples"
+require "./lib/meles"
+require "./lib/cerises"
+require "./lib/bananes"
+require "./lib/poires"
 require "./lib/kiwi"
-require "./lib/fraise"
+require "./lib/fraises"
 
 class Panier
   attr_accessor :fruit_dico, :total, :cart
@@ -45,9 +45,9 @@ class Panier
     item_fruit = Object.const_get(argument)
     reduc = item_fruit.instance_variable_get(:@reduc)
     @total = @cart.flatten.map(&:price).sum
-    @total -= reduc if @fruit_dico["Banane"] > 1
-    @total -= reduc if @fruit_dico["Cerise"] > 1
-    @total -= reduc if @fruit_dico["Mele"] > 1
-    @total -= reduc if @fruit_dico["Apple"] > 2
+    @total -= reduc if @fruit_dico["Bananes"] > 1
+    @total -= reduc if @fruit_dico["Cerises"] > 1
+    @total -= reduc if @fruit_dico["Meles"] > 1
+    @total -= reduc if @fruit_dico["Apples"] > 2
   end
 end

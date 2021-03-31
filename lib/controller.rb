@@ -11,9 +11,9 @@ class Controller
     render({fruit: @fruit, total: panier.total, paniers: panier.fruit_dico})
   end
 
-  def panier
-    @fruit = params.values[0]
-    panier.fruit_basket(@fruit)
+  def basket
+    p @fruit = params.values[0]
+    p panier.fruit_basket(@fruit)
     redirect("/")
   end
 
@@ -26,12 +26,11 @@ class Controller
     render({}, 404)
   end
 
+  private
+
   def panier
     @panier = Panier.new
   end
-
-
-  private
 
   def render(params, code=200)
     file = caller_locations(1,1)[0].label

@@ -1,4 +1,4 @@
-class Mele < Fruits
+class Meles < Fruits
   @reduc = 50
   attr_reader :price
   def initialize

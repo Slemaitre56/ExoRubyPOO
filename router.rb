@@ -9,12 +9,12 @@ class Router
   def call(env)
     path = env["REQUEST_PATH"]
     params = Rack::Request.new(env).params
-   
+    controller.params = params
     case path
     when "/"
       controller.index
     when "/panier"
-      controller.panier
+      controller.basket
     else
       controller.no_found
     end

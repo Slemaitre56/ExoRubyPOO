@@ -12,6 +12,7 @@ gem "rspec"
 gem "rubocop"
 gem "thin", "~> 1.8"
 gem "tilt"
+gem "sqlite3"
 
 
 

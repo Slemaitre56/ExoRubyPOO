@@ -1,4 +1,4 @@
-class Fraise < Fruits
+class Fraises < Fruits
     @reduc = 0
     attr_reader :price
     def initialize

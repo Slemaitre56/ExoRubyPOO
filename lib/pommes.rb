@@ -1,5 +1,5 @@
-class Apple < Fruits
-  @reduc = 100
+class Pommes < Fruits
+  @reduc = 0
   attr_reader :price
   def initialize
     @price = 100
