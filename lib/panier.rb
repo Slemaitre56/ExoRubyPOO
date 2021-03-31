@@ -4,17 +4,23 @@ require "./lib/apple"
 require "./lib/mele"
 require "./lib/cerise"
 require "./lib/banane"
+require "./lib/poire"
+require "./lib/kiwi"
+require "./lib/fraise"
 
 class Panier
-  attr_accessor :fruit_dico, :total
+  attr_accessor :fruit_dico, :total, :cart
   def initialize
     @sum = 0
     @fruit_dico = {
-      "Pomme" => 0,
-      "Apple" => 0,
-      "Mele" => 0,
-      "Banane" => 0,
-      "Cerise" => 0
+      "Pommes" => 0,
+      "Apples" => 0,
+      "Meles" => 0,
+      "Bananes" => 0,
+      "Kiwi" => 0,
+      "Fraises" => 0,
+      "Poires" => 0,
+      "Cerises" => 0
     }
     @cart = []
     @total = 0

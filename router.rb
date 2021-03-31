@@ -1,34 +1,22 @@
-require "tilt"
-require "erb"
-require "./lib/panier"
+require "./lib/controller"
 
 class Router
+
+  def controller
+    @controller ||= Controller.new
+  end  
+
   def call(env)
     path = env["REQUEST_PATH"]
     params = Rack::Request.new(env).params
-
-    if @panier == nil
-      @panier = Panier.new
-    end
    
     case path
     when "/"
-      template = Tilt.new("index.html.erb")
-      [200, { "Content-type" => "text/html" }, 
-      template.render(
-        self,
-        fruit: @fruit,
-        total: @panier.total
-      )
-    ]
+      controller.index
     when "/panier"
-      @fruit = params.values[0]
-      @panier.fruit_basket(@fruit)
-
-      [302, {"Location" => "/"}, []]
+      controller.panier
     else
-      template = Tilt.new("no_found.html.erb")
-      [404, { "Content-type" => "text/html" }, template.render]
+      controller.no_found
     end
   end
 end
