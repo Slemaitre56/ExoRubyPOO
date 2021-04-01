@@ -7,24 +7,13 @@ require "pry"
 
 class Controller
  attr_accessor :params
- # def dbb
-   # dbb =SQLite3::Database.new("./myshopDB.db")
-    #items = dbb.execute("SELECT name, price FROM products")
-   # item ={}
-    #items.each { |i| item.store(i[0],i[1])} 
-    #binding.pry
-  #end  
-
   def index
-    
     @total = panier.total
     @panier_dico = panier.fruit_dico
-
     render({fruit: @fruit, total: @total, panier_dico: @panier_dico})
   end
 
   def basket
-    
     @fruit = params.values[0]
     panier.fruit_basket(@fruit)
     redirect("/")
