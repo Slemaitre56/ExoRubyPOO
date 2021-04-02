@@ -47,11 +47,11 @@ class Panier
     item_fruit = Object.const_get(name_fruit)
     reduc = item_fruit.instance_variable_get(:@reduc)
     @prix_fruit << Shop::find_by_name(name).price
-    p @total = @prix_fruit.sum
-    p @total -= @fruit_dico["Bananes"] / 2 * reduc
-    p @total -= @fruit_dico["Apples"] / 3 * reduc 
-    p @total -= @fruit_dico["Cerises"] / 2 * reduc 
-    p @total -= @fruit_dico["Meles"] / 2 * reduc 
+    @total = @prix_fruit.sum
+    @total -= @fruit_dico["Bananes"] / 2 * reduc
+    @total -= @fruit_dico["Apples"] / 3 * reduc 
+    @total -= @fruit_dico["Cerises"] / 2 * reduc 
+    @total -= @fruit_dico["Meles"] / 2 * reduc 
     
   end
 

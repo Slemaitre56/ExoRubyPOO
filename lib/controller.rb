@@ -10,13 +10,21 @@ class Controller
   def index
     @total = panier.total
     @panier_dico = panier.fruit_dico
-    render({fruit: @fruit, total: @total, panier_dico: @panier_dico})
+    @list = Shop::all
+    @list = @list.map{|l| { name:l.name, price:l.price}} 
+  
+    render_json({fruit: @fruit, total: @total, panier_dico: @panier_dico, list: @list})
   end
 
   def basket
     @fruit = params.values[0]
     panier.fruit_basket(@fruit)
-    redirect("/")
+    render_json({fruit: @fruit})
+  end
+
+  def list
+    @products = Shop::all
+    render_json({products: @products})
   end
 
   def clear
